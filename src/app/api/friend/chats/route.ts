@@ -48,7 +48,11 @@ export async function GET(req: NextRequest) {
     return new NextResponse(JSON.stringify(response), {
       status: 200,
     });
-  } catch (err) {}
+  } catch (err) {
+    return new NextResponse("something went wrong", {
+      status: 500,
+    });
+  }
 }
 
 export async function POST(req: NextRequest) {

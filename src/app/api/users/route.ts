@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
     const username = searchParams.get('username');
     const session = await getServerSession(authOptions);
     if (!session)
-      return new Response('Not authorized', {
+      return new NextResponse('Not authorized', {
         status: 401,
       });
 
@@ -58,5 +58,9 @@ export async function GET(req: NextRequest) {
     return new NextResponse(JSON.stringify(filtered_response), {
       status: 200,
     });
-  } catch (err) {}
+  } catch (err) {
+    return new NextResponse("something went wrong", {
+      status: 500,
+    });
+  }
 }
