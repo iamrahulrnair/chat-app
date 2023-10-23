@@ -11,7 +11,6 @@ interface pageProps {}
 const page: FC<pageProps> = ({}) => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const loginWithGithub = async () => {
-    console.log('login');
 
     setIsLoading(true);
     try {

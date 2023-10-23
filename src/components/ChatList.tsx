@@ -21,7 +21,6 @@ export function ChatList({ chats }: { chats: Message[] | null }) {
   return (
     <div className='flex flex-col-reverse h-full overflow-auto   space-y-8'>
       {chats.map((chat) => {
-        console.log({chat});
         
         const isSender = chat.senderId == sender.id;
 

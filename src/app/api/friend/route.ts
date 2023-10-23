@@ -66,8 +66,6 @@ export async function POST(req: NextRequest) {
       follower: true,
     },
   });
-  console.log({ response });
-
   return new NextResponse(JSON.stringify(response), {
     status: 200,
   });
