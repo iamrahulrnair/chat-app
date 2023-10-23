@@ -82,10 +82,10 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  pusherServer.trigger(`private_${senderId}`, 'incoming-message', {
+  await pusherServer.trigger(`private_${senderId}`, 'incoming-message', {
     message,
   });
-  pusherServer.trigger(`private_${receiverId}`, 'incoming-message', {
+  await pusherServer.trigger(`private_${receiverId}`, 'incoming-message', {
     message,
   });
 
